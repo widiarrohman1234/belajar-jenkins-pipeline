@@ -85,6 +85,16 @@ pipeline {
                 echo 'Deploying...'
             }
         }
+        stage('Release') {
+            when{
+                expression{
+                    return params.DEPLOY
+                }
+            }
+            steps {
+                echo 'Aplikasi telah dirilis'
+            }
+        }
 
     }
     post {
