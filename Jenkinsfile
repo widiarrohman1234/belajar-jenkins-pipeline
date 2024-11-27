@@ -13,6 +13,9 @@ pipeline {
         WEB = "https://widiarrohman.my.id"
         DB = credentials("mysql_prod")
     }
+    triggers {
+        pollSCM('*/3 * * * *')
+    }
     options {
         disableConcurrentBuilds() // mencegah build secara bersamaan
         // timeout(time: 10, unit: 'MINUTES') // akan dihentikan jika lebih dari 10 detik, (MINUTES, SECONDS)
