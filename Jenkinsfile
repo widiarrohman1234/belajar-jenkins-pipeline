@@ -13,7 +13,10 @@ pipeline {
         WEB = "https://widiarrohman.my.id"
         DB = credentials("mysql_prod")
     }
-
+    options {
+        disableConcurrentBuilds() // mencegah build secara bersamaan
+        timeout(time: 10, unit: 'SECONDS') // akan dihentikan jika lebih dari 10 detik
+    }
     stages {             // Blok berisi tahapan pekerjaan
         stage('Prepare') { // Nama tahap
             steps {      // Langkah-langkah dalam tahap ini
