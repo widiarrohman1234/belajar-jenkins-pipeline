@@ -10,6 +10,13 @@ pipeline {
         stage('Build') { // Nama tahap
             steps {      // Langkah-langkah dalam tahap ini
                 echo 'Hello Pipeline job: Building...'
+                script {
+                    def data = [
+                        'firstName': 'Widi',
+                        'lastName': 'Arrohman',
+                    ]
+                    writeJSON(file: "data.json", json:data)
+                }
             }
         }
         stage('Test') {
