@@ -15,7 +15,7 @@ pipeline {
     }
     options {
         disableConcurrentBuilds() // mencegah build secara bersamaan
-        timeout(time: 10, unit: 'SECONDS') // akan dihentikan jika lebih dari 10 detik
+        timeout(time: 1, unit: 'SECONDS') // akan dihentikan jika lebih dari 10 detik
     }
     stages {             // Blok berisi tahapan pekerjaan
         stage('Prepare') { // Nama tahap
