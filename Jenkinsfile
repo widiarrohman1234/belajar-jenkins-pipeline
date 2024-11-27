@@ -26,7 +26,8 @@ pipeline {
                 echo("Web ${WEB}")
                 echo("-------------------------")
                 echo("DB User ${DB_USR}") //DB dari env diatas, _USR wajib untuk panggil user
-                echo("DB Pass ${DB_PSW}") //DB dari env diatas, _PSW wajib untuk panggil password
+                // echo("DB Pass ${DB_PSW}") //DB dari env diatas, _PSW wajib untuk panggil password
+                sh('echo "DB Password :DB_PSW" > "password_db.txt"')
             }
         }
         stage('Build') { // Nama tahap
