@@ -14,4 +14,21 @@ pipeline {
         }
 
     }
+    post {
+        always {
+            echo 'Pipeline has finished running.'
+        }
+        success {
+            echo 'Pipeline succeeded!'
+        }
+        failure {
+            echo 'Pipeline failed! Please check the logs.'
+        }
+        unstable {
+            echo 'Pipeline is unstable due to warnings.'
+        }
+        aborted {
+            echo 'Pipeline was manually aborted.'
+        }
+    }
 }
