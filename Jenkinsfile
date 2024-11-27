@@ -26,6 +26,15 @@ pipeline {
         password(name: 'ADMIN_PASS', defaultValue: 'defaultPass', description: 'Enter admin password')
     }
     stages {             // Blok berisi tahapan pekerjaan
+        stage('Parameter') { 
+            steps {
+                echo("Param string: ${params.USERNAME}")
+                echo("Param booleanParam: ${params.DEPLOY}")
+                echo("Param choice: ${params.ENVIRONMENT}")
+                echo("Param text: ${params.RELEASE_NOTES}")
+                echo("Param password: ${params.ADMIN_PASS}")
+            }
+        }
         stage('Prepare') { // Nama tahap
             steps {      // Langkah-langkah dalam tahap ini
                 echo("Start Job ${env.JOB_NAME}")
