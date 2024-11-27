@@ -1,9 +1,10 @@
 pipeline {
-    agent {
-        node {
-            label "linux && java11"
-        }
-    }            // Menentukan di mana pipeline akan berjalan (any = semua node)
+    // agent {
+    //     node {
+    //         label "linux && java11"
+    //     }
+    // }         
+    agent any   // Menentukan di mana pipeline akan berjalan (any = semua node)
     
     stages {             // Blok berisi tahapan pekerjaan
         stage('Build') { // Nama tahap
