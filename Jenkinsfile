@@ -65,6 +65,7 @@ pipeline {
             steps {      // Langkah-langkah dalam tahap ini
                 echo 'Hello Pipeline job: Building...'
                 script {
+                    input message: 'Build to the next step?', ok: 'Yes, Build'
                     def data = [
                         'firstName': 'Widi',
                         'lastName': 'Arrohman',
