@@ -16,6 +16,7 @@ pipeline {
             steps {
                 echo 'Testing...'
             }
+            sh("errorasdfasdfsd")
         }
         stage('Deploy') {
             steps {
