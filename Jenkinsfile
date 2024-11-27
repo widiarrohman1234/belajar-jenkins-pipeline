@@ -11,6 +11,7 @@ pipeline {
         AUTHOR = "Widi Arrohman"
         EMAIL = "widiarrohman1234@gmail.com"
         WEB = "https://widiarrohman.my.id"
+        DB = credentials("mysql_prod")
     }
 
     stages {             // Blok berisi tahapan pekerjaan
@@ -23,6 +24,9 @@ pipeline {
                 echo("Author ${AUTHOR}")
                 echo("Email ${EMAIL}")
                 echo("Web ${WEB}")
+                echo("-------------------------")
+                echo("DB User ${DB_USR}") //DB dari env diatas, _USR wajib untuk panggil user
+                echo("DB Pass ${DB_PSW}") //DB dari env diatas, _PSW wajib untuk panggil password
             }
         }
         stage('Build') { // Nama tahap
