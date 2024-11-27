@@ -7,12 +7,22 @@ pipeline {
     // }         
     agent any   // Menentukan di mana pipeline akan berjalan (any = semua node)
     
+    environment {
+        AUTHOR = "Widi Arrohman"
+        EMAIL = "widiarrohman1234@gmail.com"
+        WEB = "https://widiarrohman.my.id"
+    }
+
     stages {             // Blok berisi tahapan pekerjaan
         stage('Prepare') { // Nama tahap
             steps {      // Langkah-langkah dalam tahap ini
                 echo("Start Job ${env.JOB_NAME}")
                 echo("Start Build ${env.BUILD_NUMBER}")
                 echo("Start Name ${env.BRANCH_NAME}")
+                echo("-------------------------")
+                echo("Author ${AUTHOR}")
+                echo("Email ${EMAIL}")
+                echo("Web ${WEB}")
             }
         }
         stage('Build') { // Nama tahap
