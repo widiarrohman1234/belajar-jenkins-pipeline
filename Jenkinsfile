@@ -1,4 +1,5 @@
 pipeline {
+    // jika agent lebih dari 1
     // agent {
     //     node {
     //         label "linux && java11"
@@ -7,6 +8,13 @@ pipeline {
     agent any   // Menentukan di mana pipeline akan berjalan (any = semua node)
     
     stages {             // Blok berisi tahapan pekerjaan
+        stage('Prepare') { // Nama tahap
+            steps {      // Langkah-langkah dalam tahap ini
+                echo("Start Job ${env.JOB_NAME}")
+                echo("Start Build ${env.BUILD_NUMBER}")
+                echo("Start Name ${env.BRANCH_NAME}")
+            }
+        }
         stage('Build') { // Nama tahap
             steps {      // Langkah-langkah dalam tahap ini
                 echo 'Hello Pipeline job: Building...'
