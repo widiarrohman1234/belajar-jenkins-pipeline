@@ -12,6 +12,16 @@ pipeline {
                 echo 'Hello Pipeline job: Building...'
             }
         }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+            }
+        }
 
     }
     post {
